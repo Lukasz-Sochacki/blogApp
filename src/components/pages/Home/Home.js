@@ -1,10 +1,40 @@
 import styles from './Home.module.scss';
+import { getAllPosts } from '../../../redux/postsRedux';
+import { useSelector } from 'react-redux';
+import { Card, Col, Container, Row, Stack } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
+  const posts = useSelector(getAllPosts);
+  console.log(posts);
+
   return (
-    <div>
-      <h1>Home</h1>
-    </div>
+    <>
+      <Container>
+        <Row>
+          {posts.map((post) => (
+            <Col md='4' key={post.id} className='mb-4'>
+              <Card style={{ width: '18rem' }}>
+                <Card.Body>
+                  <Card.Title>{post.title}</Card.Title>
+                  <p className='mb-2'>
+                    <strong>Author: </strong>
+                    {post.author}
+                    <br />
+                    <strong>Published: </strong>
+                    {post.publishedDate}
+                  </p>
+                  <Card.Text>{post.shortDescription}</Card.Text>
+                  <Link to={`/post/${post.id}`} className='btn btn-primary'>
+                    Read more
+                  </Link>
+                </Card.Body>
+              </Card>
+            </Col>
+          ))}
+        </Row>
+      </Container>
+    </>
   );
 };
 

@@ -5,10 +5,14 @@ import EditPost from './components/pages/EditPost/EditPost';
 import Home from './components/pages/Home/Home';
 import { Routes, Route } from 'react-router-dom';
 import NotFound from './components/pages/NotFound/NotFound';
+import Header from './components/views/Header/Header';
+import Footer from './components/views/Footer/Footer';
+import { Container } from 'react-bootstrap';
 
 function App() {
   return (
-    <main>
+    <Container>
+      <Header />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About />} />
@@ -17,7 +21,8 @@ function App() {
         <Route path='/post/edit/:id' element={<EditPost />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
-    </main>
+      <Footer />
+    </Container>
   );
 }
 
