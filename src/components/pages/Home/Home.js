@@ -6,11 +6,11 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
   const posts = useSelector(getAllPosts);
-  console.log(posts);
 
   return (
     <>
       <Container>
+        <h1 className='mb-5'>All posts</h1>
         <Row>
           {posts.map((post) => (
             <Col md='4' key={post.id} className='mb-4'>
