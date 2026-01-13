@@ -1,10 +1,12 @@
-import styles from './AddPost.module.scss';
+import AddPostForm from '../../features/AddPostForm/AddPostForm';
+import { Container } from 'react-bootstrap';
 
 const AddPost = () => {
   return (
-    <div>
-      <h1>AddPost</h1>
-    </div>
+    <Container className='w-75'>
+      <h1 className='mb-4'>AddPost</h1>
+      <AddPostForm />
+    </Container>
   );
 };
 

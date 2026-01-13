@@ -1,12 +1,8 @@
-import { useParams } from 'react-router-dom';
-import styles from './SinglePost.module.scss';
-import { useSelector } from 'react-redux';
-import { getPostById } from '../../../redux/postsRedux';
 import { Button, Col, Container, Row, Modal } from 'react-bootstrap';
-import { Link, Navigate } from 'react-router-dom';
+import { Link, Navigate, useParams } from 'react-router-dom';
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { deletePost } from '../../../redux/postsRedux';
+import { useDispatch, useSelector } from 'react-redux';
+import { deletePost, getPostById } from '../../../redux/postsRedux';
 
 const SinglePost = () => {
   const { id } = useParams();

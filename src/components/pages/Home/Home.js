@@ -1,4 +1,3 @@
-import styles from './Home.module.scss';
 import { getAllPosts } from '../../../redux/postsRedux';
 import { useSelector } from 'react-redux';
 import { Card, Col, Container, Row, Stack } from 'react-bootstrap';
@@ -10,7 +9,13 @@ const Home = () => {
   return (
     <>
       <Container>
-        <h1 className='mb-5'>All posts</h1>
+        <Col className='d-flex'>
+          <h1 className='mb-5'>All posts</h1>
+
+          <Link to='/post/add' className='btn btn-outline-primary ms-auto mb-5'>
+            Add post
+          </Link>
+        </Col>
         <Row>
           {posts.map((post) => (
             <Col md='4' key={post.id} className='mb-4'>
