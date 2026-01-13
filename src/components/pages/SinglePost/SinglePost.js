@@ -12,8 +12,7 @@ const SinglePost = () => {
 
   const [showModal, setShowModal] = useState(false);
 
-  const handleDelete = (event) => {
-    event.preventDefault();
+  const handleDelete = () => {
     dispatch(deletePost(id));
   };
 
