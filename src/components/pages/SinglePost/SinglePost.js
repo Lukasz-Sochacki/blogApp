@@ -3,6 +3,7 @@ import { Link, Navigate, useParams } from 'react-router-dom';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { deletePost, getPostById } from '../../../redux/postsRedux';
+import { dateToStr } from '../../../utils/dateToStr';
 
 const SinglePost = () => {
   const { id } = useParams();
@@ -28,8 +29,15 @@ const SinglePost = () => {
               {postData.author}
               <br />
               <strong>Published: </strong>
-              {postData.publishedDate}
+              {dateToStr(postData.publishedDate)}
+              <br />
+              <strong>Category: </strong>
+              {postData.category}
+              <br />
+              <strong>Short description: </strong>
+              {postData.shortDescription}
             </p>
+            <p dangerouslySetInnerHTML={{ __html: postData.content }}></p>
           </Col>
           <Col md='4'>
             <Link

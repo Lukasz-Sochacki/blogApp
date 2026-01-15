@@ -14,7 +14,7 @@ const AddPostForm = () => {
 
   return (
     <>
-      <PostForm action={handleSubmit} actionText='Add post' />;
+      <PostForm action={handleSubmit} actionText='Add post' />
     </>
   );
 };

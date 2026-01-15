@@ -20,6 +20,9 @@ const NavBar = () => {
             <Nav.Link className='text-light px-3' as={NavLink} to='/'>
               Home
             </Nav.Link>
+            <Nav.Link className='text-light px-3' as={NavLink} to='/categories'>
+              Categories
+            </Nav.Link>
             <Nav.Link className='text-light px-3' as={NavLink} to='/about'>
               About
             </Nav.Link>
