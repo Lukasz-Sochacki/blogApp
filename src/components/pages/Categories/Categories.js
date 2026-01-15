@@ -14,7 +14,7 @@ const Categories = () => {
   return (
     <>
       <h1>
-        Category: <h2 className='d-inline-block'>{category}</h2>
+        Category: <span className='d-inline-block'>{category}</span>
       </h1>
       <Row>
         {categories.length > 0 ? (
