@@ -1,5 +1,5 @@
 import { Col, Row, Button, Container } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { getAllCategories } from '../../../redux/categoriesRedux';
 const CategorySummary = () => {
@@ -11,14 +11,8 @@ const CategorySummary = () => {
       <Container>
         <Row xs={1} md={1}>
           {categories.map((category) => (
-            <Col key={category} className='mx-5'>
-              <Button
-                variant='link'
-                as={NavLink}
-                to={`/categories/${category}`}
-              >
-                {category}
-              </Button>
+            <Col key={category} className='mt-3'>
+              <Link to={`/categories/${category}`}>{category}</Link>
             </Col>
           ))}
         </Row>
