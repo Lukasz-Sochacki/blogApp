@@ -40,7 +40,7 @@ const postsReducer = (statePart = [], action) => {
       return [...statePart, { ...action.payload, id: shortid() }];
     case EDIT_POST:
       return statePart.map((post) =>
-        post.id === action.payload.id ? { ...post, ...action.payload } : post
+        post.id === action.payload.id ? { ...post, ...action.payload } : post,
       );
 
     default:

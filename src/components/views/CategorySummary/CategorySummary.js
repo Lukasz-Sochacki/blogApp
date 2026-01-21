@@ -1,4 +1,4 @@
-import { Col, Row, Button, Container } from 'react-bootstrap';
+import { Col, Row, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { getAllCategories } from '../../../redux/categoriesRedux';
