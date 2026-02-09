@@ -1,6 +1,6 @@
 import { getAllPosts } from '../../../redux/postsRedux';
 import { useSelector } from 'react-redux';
-import { Card, Col, Container, Row, Stack } from 'react-bootstrap';
+import { Card, Col, Container, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { dateToStr } from '../../../utils/dateToStr';
 

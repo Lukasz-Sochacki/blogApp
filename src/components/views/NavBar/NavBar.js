@@ -2,6 +2,7 @@ import { NavLink } from 'react-router-dom';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
+import styles from './NavBar.module.scss';
 
 const NavBar = () => {
   return (
@@ -17,13 +18,31 @@ const NavBar = () => {
             Blog.app
           </Navbar.Brand>
           <Nav className='d-inline-flex'>
-            <Nav.Link className='text-light px-3' as={NavLink} to='/'>
+            <Nav.Link
+              className={({ isActive }) =>
+                isActive ? styles.linkActive : 'text-light px-3'
+              }
+              as={NavLink}
+              to='/'
+            >
               Home
             </Nav.Link>
-            <Nav.Link className='text-light px-3' as={NavLink} to='/categories'>
+            <Nav.Link
+              className={({ isActive }) =>
+                isActive ? styles.linkActive : 'text-light px-3'
+              }
+              as={NavLink}
+              to='/categories'
+            >
               Categories
             </Nav.Link>
-            <Nav.Link className='text-light px-3' as={NavLink} to='/about'>
+            <Nav.Link
+              className={({ isActive }) =>
+                isActive ? styles.linkActive : 'text-light px-3'
+              }
+              as={NavLink}
+              to='/about'
+            >
               About
             </Nav.Link>
           </Nav>
